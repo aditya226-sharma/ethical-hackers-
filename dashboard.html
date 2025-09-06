@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberX Dashboard - Ethical Hacking Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    
+    <div class="dashboard active">
+        <nav class="nav-bar">
+            <div class="logo-small">
+                <h2>CYBER<span class="x">X</span></h2>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="home">Hub</a>
+                <a href="#" class="nav-link" data-section="tools">Tools</a>
+                <a href="#" class="nav-link" data-section="labs">Labs</a>
+                <a href="#" class="nav-link" data-section="learn">Learn</a>
+                <a href="#" class="nav-link" data-section="community">Community</a>
+            </div>
+            <button class="btn-logout" onclick="logout()">EXIT</button>
+        </nav>
+        
+        <div id="home" class="section active">
+            <div class="welcome-banner">
+                <h1>Welcome to the Hackers Hub</h1>
+                <p>Your gateway to ethical hacking mastery</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">127</span>
+                        <span class="stat-label">Tools Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">45</span>
+                        <span class="stat-label">Practice Labs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1,337</span>
+                        <span class="stat-label">Active Hackers</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-access">
+                <h2>Quick Access</h2>
+                <div class="tools-grid">
+                    <div class="tool-card featured">
+                        <h3>🎯 Penetration Testing Lab</h3>
+                        <p>Practice your skills in a safe, controlled environment</p>
+                        <button class="btn-primary">Launch Lab</button>
+                    </div>
+                    <div class="tool-card featured">
+                        <h3>🔍 Vulnerability Scanner</h3>
+                        <p>Scan and identify security weaknesses</p>
+                        <button class="btn-primary">Start Scan</button>
+                    </div>
+                    <div class="tool-card featured">
+                        <h3>📡 Network Analyzer</h3>
+                        <p>Monitor and analyze network traffic</p>
+                        <button class="btn-primary">Analyze</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tools" class="section">
+            <h1>Ethical Hacking Tools Library</h1>
+            <div class="tool-categories">
+                <button class="category-btn active" data-category="all">All Tools</button>
+                <button class="category-btn" data-category="recon">Reconnaissance</button>
+                <button class="category-btn" data-category="vuln">Vulnerability Analysis</button>
+                <button class="category-btn" data-category="exploit">Exploitation</button>
+                <button class="category-btn" data-category="wireless">Wireless</button>
+                <button class="category-btn" data-category="password">Password Cracking</button>
+                <button class="category-btn" data-category="web">Web Security</button>
+            </div>
+            
+            <div class="tools-grid" id="toolsGrid">
+                <!-- Tools will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div id="labs" class="section">
+            <h1>Hacking Demo Labs</h1>
+            <div class="labs-grid">
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h3>📶 Wi-Fi Hacking Simulation</h3>
+                        <span class="difficulty beginner">Beginner</span>
+                    </div>
+                    <p>Learn wireless security testing with Aircrack-ng in a safe environment</p>
+                    <div class="lab-features">
+                        <span>• WPA/WPA2 cracking</span>
+                        <span>• Fake AP creation</span>
+                        <span>• Packet capture analysis</span>
+                    </div>
+                    <button class="btn-primary">Start Lab</button>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h3>🗄️ SQL Injection Demo</h3>
+                        <span class="difficulty intermediate">Intermediate</span>
+                    </div>
+                    <p>Practice SQL injection techniques on vulnerable web applications</p>
+                    <div class="lab-features">
+                        <span>• Union-based injection</span>
+                        <span>• Blind SQL injection</span>
+                        <span>• Database enumeration</span>
+                    </div>
+                    <button class="btn-primary">Start Lab</button>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-header">
+                        <h3>🎣 Phishing Attack Demo</h3>
+                        <span class="difficulty advanced">Advanced</span>
+                    </div>
+                    <p>Understand social engineering tactics and defense mechanisms</p>
+                    <div class="lab-features">
+                        <span>• Email spoofing</span>
+                        <span>• Credential harvesting</span>
+                        <span>• Awareness training</span>
+                    </div>
+                    <button class="btn-primary">Start Lab</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="learn" class="section">
+            <h1>Learning Hub</h1>
+            <div class="learning-path">
+                <div class="path-card">
+                    <h3>🎯 Ethical Hacking Fundamentals</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                    <p>Master the basics of ethical hacking and cybersecurity</p>
+                    <ul>
+                        <li>✓ Introduction to Cybersecurity</li>
+                        <li>✓ Linux Fundamentals</li>
+                        <li>⏳ Network Security Basics</li>
+                        <li>⏳ Vulnerability Assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="path-card">
+                    <h3>🔍 Penetration Testing</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%"></div>
+                    </div>
+                    <p>Learn professional penetration testing methodologies</p>
+                    <ul>
+                        <li>✓ Reconnaissance Techniques</li>
+                        <li>⏳ Scanning and Enumeration</li>
+                        <li>⏳ Exploitation Frameworks</li>
+                        <li>⏳ Post-Exploitation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="community" class="section">
+            <h1>Hacker Community</h1>
+            <div class="community-grid">
+                <div class="community-card">
+                    <h3>💬 Discussion Forum</h3>
+                    <p>Connect with fellow ethical hackers and share knowledge</p>
+                    <div class="forum-stats">
+                        <span>1,337 Members</span>
+                        <span>2,456 Posts</span>
+                    </div>
+                    <button class="btn-primary">Join Discussion</button>
+                </div>
+                
+                <div class="community-card">
+                    <h3>🏆 CTF Challenges</h3>
+                    <p>Test your skills with Capture The Flag competitions</p>
+                    <div class="ctf-leaderboard">
+                        <div class="leader">1. H4ck3rM4st3r - 2,850 pts</div>
+                        <div class="leader">2. CyberNinja - 2,340 pts</div>
+                        <div class="leader">3. SecurityPro - 1,995 pts</div>
+                    </div>
+                    <button class="btn-primary">View Challenges</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="matrix.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

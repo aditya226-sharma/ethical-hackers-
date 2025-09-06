@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberX Terminal - Hacker Console</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="terminal.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">CYBERX HACKER TERMINAL v2.1.337</span>
+            <button class="close-btn" onclick="window.close()">×</button>
+        </div>
+        
+        <div class="terminal-body" id="terminal">
+            <div class="terminal-line">
+                <span class="prompt">root@cyberx:~#</span>
+                <span class="command">Welcome to CyberX Terminal</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output">System initialized. Type 'help' for available commands.</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output">Security Level: MAXIMUM | Encryption: AES-256</span>
+            </div>
+            <div class="terminal-line">
+                <span class="output">Connected to: ETHICAL_HACKING_NETWORK</span>
+            </div>
+            <div class="terminal-line">
+                <span class="prompt">root@cyberx:~#</span>
+                <input type="text" id="commandInput" class="command-input" autofocus>
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="matrix.js"></script>
+    <script src="terminal.js"></script>
+</body>
+</html>
